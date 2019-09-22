@@ -9,4 +9,11 @@
  * Webpack is compiling as the input file.
  */
 
+/**
+ * Internal dependencies
+ */
+// import './fontawesome';
+// import './icons';
+// import './format-types';
+
 import './block/block.js';

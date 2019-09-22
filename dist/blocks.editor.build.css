@@ -1,1 +1,60 @@
-.wp-block-cgb-block-cgb{color:#292929;background:#bada55;border:0.2rem solid #292929;padding:2rem}
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Editor styles for the Card Block.
+ *
+ * Enqueued in the editor only.
+ */
+.wp-block-bengal-studio-card-image.components-placeholder h2,
+.wp-block-bengal-studio-card.components-placeholder h2 {
+  color: inherit; }
+
+.wp-block-bengal-studio-card-image.has-right-content .block-editor-rich-text__inline-toolbar,
+.wp-block-bengal-studio-card-image.has-left-content .block-editor-rich-text__inline-toolbar,
+.wp-block-bengal-studio-card.has-right-content .block-editor-rich-text__inline-toolbar,
+.wp-block-bengal-studio-card.has-left-content .block-editor-rich-text__inline-toolbar {
+  display: inline-block; }
+
+.wp-block-bengal-studio-card-image .block-editor-block-list__layout,
+.wp-block-bengal-studio-card .block-editor-block-list__layout {
+  width: 100%; }
+
+.wp-block-bengal-studio-card-image .wp-block-bengal-studio-card__inner-container,
+.wp-block-bengal-studio-card .wp-block-bengal-studio-card__inner-container {
+  text-align: left; }
+
+.wp-block-bengal-studio-card-image .wp-block-bengal-studio-card__inner-container > .block-editor-inner-blocks > .block-editor-block-list__layout,
+.wp-block-bengal-studio-card .wp-block-bengal-studio-card__inner-container > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  margin-left: 0;
+  margin-right: 0; }
+
+.wp-block-bengal-studio-card-image.components-placeholder,
+.wp-block-bengal-studio-card.components-placeholder {
+  background: #ecf0f1;
+  min-height: 200px; }
+  .is-dark-theme .wp-block-bengal-studio-card-image.components-placeholder, .is-dark-theme
+  .wp-block-bengal-studio-card.components-placeholder {
+    background: #ecf0f1; }
+
+.wp-block-bengal-studio-card-image .wp-block-bengal-studio-card__placeholder-color-palette,
+.wp-block-bengal-studio-card .wp-block-bengal-studio-card__placeholder-color-palette {
+  max-width: 290px;
+  margin-top: 1em; }
+
+[data-align="left"] .wp-block-bengal-studio-card-image,
+[data-align="right"] .wp-block-bengal-studio-card-image, [data-align="left"]
+.wp-block-bengal-studio-card,
+[data-align="right"]
+.wp-block-bengal-studio-card {
+  max-width: 600;
+  width: 100%; }
+
+.block-library-bengal-studio-card__reset-button {
+  margin-left: auto; }
+
+.block-library-bengal-studio-card__resize-container:not(.is-resizing) {
+  height: auto !important; }

@@ -1,1 +1,82 @@
-.wp-block-cgb-block-cgb{color:#292929;background:#ff4500;border:0.2rem solid #292929;padding:2rem}
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-bengal-studio-card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow: hidden;
+  background-color: #f4f4f4;
+  background-clip: border-box;
+  border-radius: 0.25rem; }
+  .wp-block-bengal-studio-card__title {
+    position: relative;
+    z-index: 2;
+    color: #f4f4f4; }
+  .wp-block-bengal-studio-card__img-top {
+    position: relative;
+    min-height: 250px;
+    padding: 1.25rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+        align-items: flex-end;
+    background-size: cover;
+    background-position: center center;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px); }
+    .wp-block-bengal-studio-card__img-top.has-parallax {
+      background-attachment: fixed; }
+      @supports (-webkit-overflow-scrolling: touch) {
+        .wp-block-bengal-studio-card__img-top.has-parallax {
+          background-attachment: scroll; } }
+      @media (prefers-reduced-motion: reduce) {
+        .wp-block-bengal-studio-card__img-top.has-parallax {
+          background-attachment: scroll; } }
+    .wp-block-bengal-studio-card__img-top.has-background-dim::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: inherit;
+      opacity: 0.5;
+      z-index: z-index(".wp-block-bengal-studio-card__img-top.has-background-dim::before"); }
+    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-10::before {
+      opacity: 0.1; }
+    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-20::before {
+      opacity: 0.2; }
+    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-30::before {
+      opacity: 0.3; }
+    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-40::before {
+      opacity: 0.4; }
+    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-50::before {
+      opacity: 0.5; }
+    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-60::before {
+      opacity: 0.6; }
+    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-70::before {
+      opacity: 0.7; }
+    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-80::before {
+      opacity: 0.8; }
+    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-90::before {
+      opacity: 0.9; }
+    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-100::before {
+      opacity: 1; }
+  .wp-block-bengal-studio-card__inner-container {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem; }
