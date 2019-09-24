@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: card-block — CGB Gutenberg Block Plugin
+ * Plugin Name: icon-list-block — CGB Gutenberg Block Plugin
  * Plugin URI: https://github.com/ahmadawais/create-guten-block/
- * Description: card-block — is a Gutenberg plugin created via create-guten-block.
+ * Description: icon-list-block — is a Gutenberg plugin created via create-guten-block.
  * Author: mrahmadawais, maedahbatool
  * Author URI: https://AhmadAwais.com/
  * Version: 1.0.0

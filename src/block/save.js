@@ -1,86 +1,49 @@
-/**
- * External dependencies
- */
-import classnames from 'classnames';
+import { applyFilters } from '@wordpress/hooks'
+import classnames from 'classnames'
+import { getIconSVGBase64 } from './util'
+import { RichText } from '@wordpress/block-editor'
 
-/**
- * WordPress dependencies
- */
-import {
-	RichText,
-	InnerBlocks,
-	getColorClassName,
-} from '@wordpress/block-editor';
-
-/**
- * Internal dependencies
- */
-import {
-	IMAGE_BACKGROUND_TYPE,
-	VIDEO_BACKGROUND_TYPE,
-	backgroundImageStyles,
-	dimRatioToClass,
-} from './shared';
-
-export default function save( { attributes } ) {
+const save = props => {
+	const { className } = props
 	const {
-		backgroundType,
-		customOverlayColor,
-		dimRatio,
-		focalPoint,
-		hasParallax,
-		overlayColor,
-		url,
-		minHeight,
-		cardTitle
-	} = attributes;
-	const overlayColorClass = getColorClassName( 'background-color', overlayColor );
-	const style = backgroundType === IMAGE_BACKGROUND_TYPE ?
-		backgroundImageStyles( url ) :
-		{};
-	if ( ! overlayColorClass ) {
-		style.backgroundColor = customOverlayColor;
-	}
-	if ( focalPoint && ! hasParallax ) {
-		style.backgroundPosition = `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%`;
-	}
-	style.minHeight = minHeight || undefined;
+		icon,
+		iconShape,
+		iconColor,
+		iconSize,
+		text,
+		columns,
+		gap,
+		design = '',
+	} = props.attributes
 
-	const classes = classnames(
-		'wp-block-bengal-studio-card__img-top',
-		dimRatioToClass( dimRatio ),
-		overlayColorClass,
-		{
-			'has-background-dim': dimRatio !== 0,
-			'has-parallax': hasParallax,
-		},
-	);
+	const mainClasses = classnames( [
+		className,
+		'ugb-icon-list-wrapper',
+	], applyFilters( 'stackable.icon-list.mainclasses', {}, design, props ) )
+
+	const ulClasses = classnames( [
+		'ugb-icon-list',
+		`ugb-icon--icon-${ icon }`,
+		`ugb-icon--columns-${ columns }`,
+	], applyFilters( 'stackable.icon-list.ulclasses', {}, design, props ) )
+
+	const iconSVGString = getIconSVGBase64( icon, iconShape, iconColor )
+	const style = {
+		'--icon': 'url(\'data:image/svg+xml;base64,' + iconSVGString + '\')',
+		'--icon-size': iconSize ? `${ iconSize }px` : undefined,
+		'--gap': gap ? `${ gap }px` : undefined,
+	}
 
 	return (
-		<div>
-			{ IMAGE_BACKGROUND_TYPE === backgroundType && (
-				<div
-					className={ classes }
-					data-url={ url }
-					style={ style }
-				>
-					<RichText.Content
-						tagName="h2"
-						value={ cardTitle }
-						className="wp-block-bengal-studio-card__title"
-					/>
-				</div>
-			) }
-			{ VIDEO_BACKGROUND_TYPE === backgroundType && url && ( <video
-				className="wp-block-bengal-studio-card__video-background"
-				autoPlay
-				muted
-				loop
-				src={ url }
-			/> ) }
-			<div className="wp-block-bengal-studio-card__inner-container">
-				<InnerBlocks.Content />
-			</div>
+		<div className={ mainClasses }>
+			<RichText.Content
+				tagName="ul"
+				className={ ulClasses }
+				style={ style }
+				value={ text }
+			/>
 		</div>
-	);
+	)
 }
+
+export default save

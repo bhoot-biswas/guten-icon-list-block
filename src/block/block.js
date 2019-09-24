@@ -23,6 +23,51 @@ const {
     attributes
 } = metadata;
 
+export const schema = {
+	icon: {
+		type: 'string',
+		default: 'check',
+	},
+	iconShape: {
+		type: 'string',
+	},
+	iconColor: {
+		type: 'string',
+	},
+	iconSize: {
+		type: 'number',
+		default: 20,
+	},
+	columns: {
+		type: 'number',
+		default: 1,
+	},
+	text: {
+		source: 'html',
+		selector: 'ul',
+		multiline: 'li',
+		default: '',
+	},
+	gap: {
+		type: 'number',
+		default: 16,
+	},
+
+	// Custom CSS attributes.
+	customCSSUniqueID: {
+		type: 'string',
+		default: '',
+	},
+	customCSS: {
+		type: 'string',
+		default: '',
+	},
+	customCSSCompiled: {
+		type: 'string',
+		default: '',
+	},
+}
+
 /**
  * Register: a Gutenberg Block.
  *
@@ -38,15 +83,15 @@ const {
  */
 registerBlockType( name, {
     // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'card-block - Gutenberg Block' ), // Block title.
-    description: __( 'Cards provide a flexible and extensible content container with multiple variants and options.' ),
+	title: __( 'icon-list-block - Gutenberg Block' ), // Block title.
+    description: __( 'The Icon List Block allows you to create bulleted lists using different icons. Use the icon list to make your layout less cluttered and showcase list items more effectively. Create checklists, feature lists and the like.' ),
 	icon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category, // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'card-block — Gutenberg Card' ),
+		__( 'icon-list-block — Gutenberg Icon List' ),
 		__( 'create-guten-block' ),
 	],
-    attributes,
+    attributes: schema,
     edit,
     save,
 } );

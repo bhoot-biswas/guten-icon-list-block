@@ -4,66 +4,13 @@
  * Enqueued in the editor only.
  */
 
-.wp-block-bengal-studio-card-image,
-.wp-block-bengal-studio-card {
+ // UL is a child when in block form, remove the bullets.
+ .ugb-icon-list ul {
+ 	list-style: none !important;
+ }
 
-	&.components-placeholder h2 {
-		color: inherit;
-	}
-
-	&.has-right-content .block-editor-rich-text__inline-toolbar,
-	&.has-left-content .block-editor-rich-text__inline-toolbar {
-		display: inline-block;
-	}
-
-	.block-editor-block-list__layout {
-		width: 100%;
-	}
-
-	.block-editor-block-list__block {
-		// color: $light-gray-100;
-	}
-
-	// wp-block-bengal-studio-card class is used just to increase selector specificity
-	.wp-block-bengal-studio-card__inner-container {
-		// avoid text align inherit from cover image align.
-		text-align: left;
-	}
-
-	.wp-block-bengal-studio-card__inner-container > .block-editor-inner-blocks > .block-editor-block-list__layout {
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	&.components-placeholder {
-		// use opacity to work in various editor styles
-		background: $dark-opacity-light-200;
-		min-height: 200px;
-
-		.is-dark-theme & {
-			background: $light-opacity-light-200;
-		}
-	}
-
-	.wp-block-bengal-studio-card__placeholder-color-palette {
-		// wraps about 6 color swatches
-		max-width: 290px;
-		margin-top: 1em;
-	}
-
-	// Apply max-width to floated items that have no intrinsic width
-	[data-align="left"] &,
-	[data-align="right"] & {
-		max-width: $content-width / 2;
-		width: 100%;
-	}
-}
-
-.block-library-bengal-studio-card__reset-button {
-	margin-left: auto;
-}
-
-.block-library-bengal-studio-card__resize-container:not(.is-resizing) {
-	// Important is used to have higher specificity than the inline style set by re-resizable library.
-	height: auto !important;
-}
+ // Hide the list formatting toolbar buttons since we cannot use those.
+ // Depends on https://github.com/WordPress/gutenberg/pull/12527
+ .editor-block-list__block[data-type="ugb/icon-list"] .list-format-toolbar {
+ 	display: none;
+ }

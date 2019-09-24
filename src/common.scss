@@ -5,18 +5,7 @@
  * that are used across the project.
 */
 
-// Colors.
-$black: rgb(41, 41, 41);
-$white: #f4f4f4;
-$gray: #dedede;
-$green: #bada55;
-$red: orangered;
-$light-gray-100: #ecf0f1;
-$dark-opacity-light-200: #ecf0f1;
-$light-opacity-light-200: #ecf0f1;
-$content-width: 1200;
-$block-padding: 1rem;
-
+// Bootstrap.
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";

@@ -9,74 +9,56 @@
  *
  * CSS for both Frontend+Backend.
  */
-.wp-block-bengal-studio-card {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  overflow: hidden;
-  background-color: #f4f4f4;
-  background-clip: border-box;
-  border-radius: 0.25rem; }
-  .wp-block-bengal-studio-card__title {
-    position: relative;
-    z-index: 2;
-    color: #f4f4f4; }
-  .wp-block-bengal-studio-card__img-top {
-    position: relative;
-    min-height: 250px;
-    padding: 1.25rem;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: end;
-        align-items: flex-end;
+.ugb-icon-list {
+  margin: 0 0 1.5em 0 !important;
+  padding: 0 !important;
+  list-style: none !important; }
+  .ugb-icon-list li::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: var(--icon-size, 20px);
+    width: var(--icon-size, 20px);
+    margin-right: 1em;
+    background-image: var(--icon);
     background-size: cover;
-    background-position: center center;
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px); }
-    .wp-block-bengal-studio-card__img-top.has-parallax {
-      background-attachment: fixed; }
-      @supports (-webkit-overflow-scrolling: touch) {
-        .wp-block-bengal-studio-card__img-top.has-parallax {
-          background-attachment: scroll; } }
-      @media (prefers-reduced-motion: reduce) {
-        .wp-block-bengal-studio-card__img-top.has-parallax {
-          background-attachment: scroll; } }
-    .wp-block-bengal-studio-card__img-top.has-background-dim::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-color: inherit;
-      opacity: 0.5;
-      z-index: z-index(".wp-block-bengal-studio-card__img-top.has-background-dim::before"); }
-    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-10::before {
-      opacity: 0.1; }
-    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-20::before {
-      opacity: 0.2; }
-    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-30::before {
-      opacity: 0.3; }
-    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-40::before {
-      opacity: 0.4; }
-    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-50::before {
-      opacity: 0.5; }
-    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-60::before {
-      opacity: 0.6; }
-    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-70::before {
-      opacity: 0.7; }
-    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-80::before {
-      opacity: 0.8; }
-    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-90::before {
-      opacity: 0.9; }
-    .wp-block-bengal-studio-card__img-top.has-background-dim.has-background-dim-100::before {
-      opacity: 1; }
-  .wp-block-bengal-studio-card__inner-container {
-    -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1.25rem; }
+    background-position: center;
+    -webkit-transform: translateY(-10%);
+        -ms-transform: translateY(-10%);
+            transform: translateY(-10%); }
+  .ugb-icon-list li {
+    margin-top: 0 !important;
+    margin-bottom: var(--gap, 16) !important;
+    list-style: none !important;
+    text-indent: calc(var(--icon-size, 20px) * -1 - 1em) !important;
+    padding-left: calc(var(--icon-size, 20px) + 1em) !important; }
+    .ugb-icon-list li ul {
+      margin-top: var(--gap, 16) !important;
+      list-style: none;
+      margin-left: 0; }
+  .ugb-icon-list li:last-child {
+    margin-bottom: 0; }
+  .ugb-icon-list.ugb-icon--columns-2, .ugb-icon-list.column-2 {
+    -webkit-columns: 2;
+       -moz-columns: 2;
+            columns: 2; }
+  .ugb-icon-list.ugb-icon--columns-3, .ugb-icon-list.column-3 {
+    -webkit-columns: 3;
+       -moz-columns: 3;
+            columns: 3; }
+  @media screen and (max-width: 600px) {
+    .ugb-icon-list.ugb-icon--columns-3, .ugb-icon-list.column-3 {
+      -webkit-columns: 2;
+         -moz-columns: 2;
+              columns: 2; } }
+  .ugb-icon-list.ugb-icon-columns-2 li, .ugb-icon-list.ugb-icon-columns-3 li, .ugb-icon-list.column-2 li, .ugb-icon-list.column-3 li {
+    page-break-inside: avoid;
+    /* Firefox */
+    -webkit-column-break-inside: avoid;
+            break-inside: avoid; }
+
+@media all and (-ms-high-contrast: none) {
+  *::-ms-backdrop, .ugb-icon-list li {
+    list-style: inside disc !important; }
+    *::-ms-backdrop:before, .ugb-icon-list li:before {
+      content: none !important; } }
